@@ -48,7 +48,7 @@ buscar_datos("Marina", "Rivadeneira", **database)
 buscar_datos("Rocio", "Pilar", "Portal","Romano", **database)
 buscar_datos("Melina", "Gomez", **database)
 
-class test_busqueda_persona(unittest.TestCase):
+"""class test_busqueda_persona(unittest.TestCase):
 
     def test_0(self):
         self.assertIsNone(buscar_datos("Pablo", "Diego", "Ruiz", "Picasso", **database), False)
@@ -71,6 +71,16 @@ class test_busqueda_persona(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()  
+"""
 
+def main():
+    while True:
+        nombres = input("Ingrese persona que quiere buscar: ").split()
+        resultado = buscar_datos(*nombres, **database)
+        if resultado:
+            print(f"Persona numero: {resultado}")
+        else:
+            print("No se encontró persona.")
 
-
+if __name__ == '__main__':
+    main()
